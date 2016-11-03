@@ -1,0 +1,16 @@
+﻿@using NatashaAgileProject.Models
+
+@model DisplayUserViewModel
+
+<h1>Users</h1>
+<table>
+    @foreach (User item in Model.Users)
+    {
+        <tr>
+            <td>@item.UserName</td>
+            <td>@item.Email</td>
+        </tr>
+    }
+</table>
+
+<a asp-controller="Account" asp-action="AddRole">Add Role</a>

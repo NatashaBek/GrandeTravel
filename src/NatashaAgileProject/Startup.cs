@@ -7,6 +7,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+//...
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using NatashaAgileProject.Services;
+using NatashaAgileProject.Models;
 
 namespace NatashaAgileProject
 {
@@ -15,7 +19,23 @@ namespace NatashaAgileProject
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //Identity Services
+            services.AddIdentity<User, IdentityRole>
+            (
+                config =>
+                {
+                    config.User.RequireUniqueEmail = true;
+                    config.Password.RequiredLength = 6;
+                    config.Password.RequireDigit = true;
+                    config.Cookies.ApplicationCookie.LoginPath = "/Account/Login";
+                }
+            )
+            .AddEntityFrameworkStores<ProjectDbContext>();
+
+            //Mvc Services
             services.AddMvc();
+            //Mvc DbContext
+            services.AddDbContext<ProjectDbContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -28,8 +48,14 @@ namespace NatashaAgileProject
                 app.UseDeveloperExceptionPage();
             }
 
+            //Static Files
             app.UseStaticFiles();
-            app.UseMvc();
+
+            //Identity
+            app.UseIdentity();
+
+            //Mvc
+            app.UseMvcWithDefaultRoute();
         }
     }
 }
