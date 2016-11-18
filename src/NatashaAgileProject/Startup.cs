@@ -34,6 +34,10 @@ namespace NatashaAgileProject
 
             //Mvc Services
             services.AddMvc();
+            services.AddScoped<IPackageRepository, PackageRepository>();
+            services.AddScoped<IFeedbackRepository, FeedbackRepository>();
+            services.AddScoped<IOrderRepository, OrderRepository>();
+            
             //Mvc DbContext
             services.AddDbContext<ProjectDbContext>();
         }

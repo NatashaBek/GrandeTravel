@@ -8,8 +8,8 @@ using NatashaAgileProject.Services;
 namespace NatashaAgileProject.Migrations
 {
     [DbContext(typeof(ProjectDbContext))]
-    [Migration("20161020003205_initDatabaseMigration")]
-    partial class initDatabaseMigration
+    [Migration("20161117021913_iniDbMigration")]
+    partial class iniDbMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -124,10 +124,48 @@ namespace NatashaAgileProject.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("NatashaAgileProject.Models.Feedback", b =>
+                {
+                    b.Property<int>("FeedbackId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Description");
+
+                    b.Property<int>("PackageId");
+
+                    b.Property<string>("UserName");
+
+                    b.HasKey("FeedbackId");
+
+                    b.HasIndex("PackageId");
+
+                    b.ToTable("Feedback");
+                });
+
+            modelBuilder.Entity("NatashaAgileProject.Models.Order", b =>
+                {
+                    b.Property<int>("OrderId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("Date");
+
+                    b.Property<int>("PackageId");
+
+                    b.Property<string>("PackageName");
+
+                    b.Property<string>("UserName");
+
+                    b.HasKey("OrderId");
+
+                    b.ToTable("Order");
+                });
+
             modelBuilder.Entity("NatashaAgileProject.Models.Package", b =>
                 {
                     b.Property<int>("PackageId")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<bool>("Availability");
 
                     b.Property<string>("Details");
 
@@ -139,7 +177,7 @@ namespace NatashaAgileProject.Migrations
 
                     b.HasKey("PackageId");
 
-                    b.ToTable("Packages");
+                    b.ToTable("Package");
                 });
 
             modelBuilder.Entity("NatashaAgileProject.Models.User", b =>
@@ -225,6 +263,14 @@ namespace NatashaAgileProject.Migrations
                     b.HasOne("NatashaAgileProject.Models.User")
                         .WithMany("Roles")
                         .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("NatashaAgileProject.Models.Feedback", b =>
+                {
+                    b.HasOne("NatashaAgileProject.Models.Package", "Package")
+                        .WithMany("Feedback")
+                        .HasForeignKey("PackageId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
         }

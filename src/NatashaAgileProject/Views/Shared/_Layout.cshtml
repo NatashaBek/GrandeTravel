@@ -7,17 +7,15 @@
     <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
 </head>
 <body>
-
     <style>
     .navbar-brand > img{
         margin-top:-20px;
         height:61px;
         width:auto;
     }
-
     .welcome{margin-top:15px;}
 
-    #logout{margin-top:15px;}
+    #logout{margin-top:10px;}
     
     .footer{
         align-content:center;
@@ -25,17 +23,17 @@
         width:auto;
     }
     </style>
-
     <script src="~/lib/jquery/dist/jquery.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
     <div class="container-fluid">
         <div>
             @if (User.Identity.IsAuthenticated)
             {
+                @*Navbar*@
                 <div class="navbar navbar-default">
                     <div class="navbar-header">
                         <a class="navbar-brand" herf="/Home/Index">
-                            <img alt="Brand" src="~/Images/logo.png">
+                            <img alt="Brand" src="~/Images/gt_logo.png">
                         </a>
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                             <span class="icon-bar"></span>
@@ -50,14 +48,19 @@
                             <li><p class="welcome">Welcome: @User.Identity.Name</p></li>
                             <li><a asp-controller="Account" asp-action="UpdateUser">Update Details</a></li>
                             <li>
-                                <form method="post" asp-controller="Account" id="logout" asp-action="Logout">
+                                @*<form method="post" asp-controller="Account" id="logout" asp-action="Logout">
                                     <input type="submit" value="Logout" />
+                                </form>*@
+
+                                <form method="post" asp-controller="Account" id="logout" asp-action="Logout">
+                                    <input class="btn btn-default" type="submit" value="Logout" />
                                 </form>
                             </li>
                         </ul>
 
                         <ul class="nav navbar-nav navbar-left">
                             <li><a asp-controller="Package" asp-action="Packages">Packages</a></li>
+                            <li><a asp-controller="Package" asp-action="Search">Search</a></li>
 
                             @if (User.IsInRole("Provider"))
                             {
@@ -67,13 +70,12 @@
                     </div>
                 </div>
             }
-
             else
             {
                 <div class="navbar navbar-default">
                     <div class="navbar-header">
                         <a class="navbar-brand" herf="/Home/Index">
-                            <img alt="Brand" src="~/Images/logo.png">
+                            <img alt="Brand" src="~/Images/gt_logo.png">
                         </a>
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                             <span class="icon-bar"></span>
@@ -89,22 +91,23 @@
                         </ul>
                         <ul class="nav navbar-nav navbar-left">
                             <li><a asp-controller="Package" asp-action="Packages">Packages</a></li>
+                            <li><a asp-controller="Package" asp-action="Search">Search</a></li>
+                            <li><a asp-controller="Package" asp-action="Angular">Filter Search</a></li>
                         </ul>
                     </div>
                 </div>
             }
         </div>
-
         <div>
             @RenderBody()
         </div>
         <br /> 
-           
+           @* Footer *@
         <footer class="footer">
             <div class="container"> 
                 <div class="row text-center">
                     <div class="col-sm-4">
-                        <strong>About Grand Travel</strong>
+                        <strong>About Grande Travel</strong>
                         <p>Syd CBD</p>
                         <p>324 Pitt St</p>
                         <p>2219</p>

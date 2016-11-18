@@ -10,9 +10,6 @@ namespace NatashaAgileProject.ViewModels
     public class CreatePackageViewModel
     {
         [Required]
-        public int PackageId { get; set; }
-
-        [Required]
         public string PackageName { get; set; }
 
         [Required]
@@ -23,5 +20,8 @@ namespace NatashaAgileProject.ViewModels
 
         [Required]
         public double Price { get; set; }
+
+        [Required]
+        public bool Availability { get; set; } 
     }
 }

@@ -165,7 +165,6 @@ namespace NatashaAgileProject.Controllers.Web
 
         //Update User Details
         [HttpGet]
-        //Edit Role redirection
         [Authorize(Roles = "Customer, Provider")]
         public async Task<IActionResult> UpdateUser()
         {

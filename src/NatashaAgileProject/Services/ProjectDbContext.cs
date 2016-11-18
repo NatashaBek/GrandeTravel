@@ -11,7 +11,9 @@ namespace NatashaAgileProject.Services
 {
     public class ProjectDbContext : IdentityDbContext<User>
     {
-        public DbSet<Package> Packages { get; set; }
+        public DbSet<Package> Package { get; set; }
+        public DbSet<Feedback> Feedback { get; set; }
+        public DbSet<Order> Order { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder option)
         {

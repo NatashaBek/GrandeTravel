@@ -8,9 +8,12 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8144BA56-7529-43E1-B157-97F2E21F2138}"
 	ProjectSection(SolutionItems) = preProject
 		global.json = global.json
+		Local.testsettings = Local.testsettings
 	EndProjectSection
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "NatashaAgileProject", "src\NatashaAgileProject\NatashaAgileProject.xproj", "{D25BC3B5-1AB4-4510-850F-8ED76053235C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing", "NavTest\Testing.csproj", "{DA00ECE6-08CD-4F4A-B99A-18D3305E7AF3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,6 +25,10 @@ Global
 		{D25BC3B5-1AB4-4510-850F-8ED76053235C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D25BC3B5-1AB4-4510-850F-8ED76053235C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D25BC3B5-1AB4-4510-850F-8ED76053235C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA00ECE6-08CD-4F4A-B99A-18D3305E7AF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA00ECE6-08CD-4F4A-B99A-18D3305E7AF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA00ECE6-08CD-4F4A-B99A-18D3305E7AF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA00ECE6-08CD-4F4A-B99A-18D3305E7AF3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -8,11 +8,13 @@ namespace NatashaAgileProject.Models
     public class Feedback
     {
         public int FeedbackId { get; set; }
-        public string Description { get; set; }
-
+        public string Description { get; set; }      
+        
+        //User
+        public string UserName { get; set; }
+        
         //Relationship
         public int PackageId { get; set; }
         public Package Package { get; set; }
-
     }
 }

@@ -1,0 +1,101 @@
+﻿<script src="~/lib/angularjs/angular.js"></script>
+<h1 class="page-header">Angular</h1>
+<form class="form-horizontal" asp-controller="Package" asp-action="Angular" method="post" role="form" asp-anti-forgery="true">
+
+    <div ng-app="AngApp" ng-controller="AngCon">
+        <button class="btn btn-default" ng-click="getPackageData()">Find Packages</button>
+        <button class="btn btn-default" ng-click="getsearchData()">Filter Search</button>
+
+        <div ng-show="showPackages">
+            <h3>General Package Details</h3>
+            <table class="table table-responsive table-hover">
+                <thead>
+                    <tr>
+                        <td>PackageId</td>
+                        <td>PackageName</td>
+                        <td>Location</td>
+                        <td>Details</td>
+                        <td>Price</td>
+                        <td>Avaliability</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="x in allResults">
+                        <td>{{x.packageId}}</td>
+                        <td>{{x.packageName}}</td>
+                        <td>{{x.location}}</td>
+                        <td>{{x.details}}</td>
+                        <td>{{x.price}}</td>
+                        <td>{{x.avaliability}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div ng-show="searchPackages">
+            <div class="row">
+                <div class="col-sm-5">
+                    <div class="input-group">
+                        <input type="text" ng-model="location" class="form-control" placeholder="Search by location">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" ng-click="searchByLocation()" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-sm-5"><input class="form-control" type="text" ng-model="criteria" placeholder="Filter Search"></div>
+            </div>
+        </div>
+
+        <table class="table table-responsive table-hover">
+            <thead>
+                <tr>
+                    <td>PackageId</td>
+                    <td>PackageName</td>
+                    <td>Location</td>
+                    <td>Details</td>
+                    <td>Price</td>
+                    <td>Avaliability</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="x in allResults">
+                    <td>{{x.packageId}}</td>
+                    <td>{{x.packageName}}</td>
+                    <td>{{x.location}}</td>
+                    <td>{{x.details}}</td>
+                    <td>{{x.price}}</td>
+                    <td>{{x.avaliability}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <script>
+            var app = angular.module("AngApp", []);
+
+            app.controller("AngCon", function ($scope, $http) {
+                $scope.getPackageData = function () {
+                    //Show first div, hide second div
+                    $scope.showPackages = true;
+                    $scope.searchPackages = false;
+                    $http.get('/api/package').success(function (arrData) {
+                        $scope.allResults = arrData;
+                    });
+                }
+
+                $scope.getsearchData = function () {
+                    //Hide first div, show second div
+                    $scope.showPackages = false;
+                    $scope.searchPackages = true;
+
+                    //Get packages via location
+                    $scope.location = "";
+
+                    $scope.searchByLocation = function () {
+                        $http.get('/api/package/' + $scope.location).success(function (data) {
+                            $scope.pack = data;
+                        })
+                    }
+                }
+            });
+        </script>                 
+    </div>
+</form>

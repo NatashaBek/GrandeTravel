@@ -1,0 +1,25 @@
+﻿@model CreateFeedbackViewModel
+
+<h1 class="page-header">Publish Feedback</h1>
+
+<form class="form-horizontal" asp-controller="Feedback" asp-action="CreateFeedback" method="post" role="form" asp-anti-forgery="true">
+    <div asp-validation-summary="ModelOnly"></div>
+
+    <div class="form-group">
+        <label asp-for="Description" class="col-sm-2 control-label"></label>
+        <div class="col-sm-5">
+           <textarea class="form-control" rows="3" asp-for="Description" id="Description" placeholder="Description"></textarea>
+            <span asp-validation-for="Description"></span>
+        </div>
+    </div>
+
+    <div>
+        <input type="hidden" asp-for="PackageId" />
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-5">
+            <button type="submit" class="btn btn-default">Submit</button>
+        </div>
+    </div>
+</form>
