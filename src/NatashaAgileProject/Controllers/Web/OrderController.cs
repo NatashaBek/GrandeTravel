@@ -43,11 +43,11 @@ namespace NatashaAgileProject.Controllers.Web
             {
                 //Mapping
                 Order o = new Order
-                {
-                    Date = DateTime.Now,
-                    PackageName = vm.PackageName,
+                {                  
                     PackageId = vm.PackageId,
-                    UserName = vm.UserName
+                    PackageName = vm.Packages.PackageName,
+                    Date = DateTime.Now,
+                    UserName = User.Identity.Name
                 };
 
                 //Save to DB

@@ -140,17 +140,12 @@ namespace NatashaAgileProject.Controllers.Web
         }
 
         //Filter Search
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult FilterSearch()
-        {
-            SearchPackageViewModel vm = new SearchPackageViewModel
-            {
-
-            };
-
-            return View(vm);
-        }
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public IActionResult FilterSearch()
+        //{
+        //    return View(vm);
+        //}
 
 
         //Return Angular Page
@@ -159,21 +154,6 @@ namespace NatashaAgileProject.Controllers.Web
         {
             return View();
         }
-
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public IActionResult Search(string sloc)
-        //{
-        //    Package pac = _repoPackage.GetSingle(p => p.Location == sloc);
-
-        //    SearchPackageViewModel vm = new SearchPackageViewModel
-        //    {
-        //        SearchLocation = sloc,
-        //        MyPackage = _repoPackage.Query(p => p.Location == pac.Location)
-        //    };
-
-        //    return View(vm);
-        //}
     }
 }
    

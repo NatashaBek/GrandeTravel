@@ -8,8 +8,8 @@ using NatashaAgileProject.Services;
 namespace NatashaAgileProject.Migrations
 {
     [DbContext(typeof(ProjectDbContext))]
-    [Migration("20161117021913_iniDbMigration")]
-    partial class iniDbMigration
+    [Migration("20161118234002_initDbMigration")]
+    partial class initDbMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

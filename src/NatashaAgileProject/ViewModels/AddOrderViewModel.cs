@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 //...
 using NatashaAgileProject.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace NatashaAgileProject.ViewModels
 {

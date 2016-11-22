@@ -61,6 +61,7 @@
                         <ul class="nav navbar-nav navbar-left">
                             <li><a asp-controller="Package" asp-action="Packages">Packages</a></li>
                             <li><a asp-controller="Package" asp-action="Search">Search</a></li>
+                            <li><a asp-controller="Package" asp-action="Angular">Filter Search</a></li>
 
                             @if (User.IsInRole("Provider"))
                             {
@@ -106,6 +107,7 @@
         <footer class="footer">
             <div class="container"> 
                 <div class="row text-center">
+                    <div class="col-sm-2"></div>
                     <div class="col-sm-4">
                         <strong>About Grande Travel</strong>
                         <p>Syd CBD</p>
@@ -115,16 +117,16 @@
 
                     <div class="col-sm-4">
                         <strong>Contact Details</strong>
-                        <p>Email:</p>
+                        <p>Email:GrandeT@hotmail.com</p>
                         <p>Phone:95886432</p>
                     </div>
                 </div> 
-
-                <div class="row text-center">
-                    <div class="col-sm-4">&copy; Natasha Bekvalac 2016. All Rights Reserved.</div>
-                    <p class="pull-right"><a href="#">Back to top</a></p>
-                </div>                                                               
-            </div>
+                <div class="col-sm-4"></div>
+                    <div class="row text-center">
+                        <div class="col-sm-4">&copy; Natasha Bekvalac 2016. All Rights Reserved.</div>
+                        <p class="pull-right"><a href="#">Back to top</a></p>
+                    </div>
+                </div>
         </footer>
     </div>
 </body>

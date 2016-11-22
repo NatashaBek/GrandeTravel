@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace NatashaAgileProject.Migrations
 {
-    public partial class iniDbMigration : Migration
+    public partial class initDbMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
