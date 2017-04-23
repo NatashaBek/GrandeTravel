@@ -1,12 +1,12 @@
 ﻿@model RegisterViewModel
 
-    <h1 class="page-header">Register</h1>
+    <h1 class="text-center page-header">Register</h1>
 
     <form class="form-horizontal" asp-controller="Account" asp-action="Register" method="post" role="form" asp-anti-forgery="true">
     <div asp-validation-summary="ModelOnly"></div>
 
     <div class="form-group">
-        <label asp-for="UserName" class="col-sm-2 control-label"></label>
+        <label asp-for="UserName" class="col-sm-2 control-label col-sm-offset-2"></label>
         <div class="col-sm-5">
             <input asp-for="UserName" class="form-control" id="UserName" placeholder="User Name" />
             <span asp-validation-for="UserName"></span>
@@ -14,7 +14,7 @@
     </div>
 
     <div class="form-group">
-        <label asp-for="Email" class="col-sm-2 control-label"></label>
+        <label asp-for="Email" class="col-sm-2 control-label col-sm-offset-2"></label>
         <div class="col-sm-5">
             <input asp-for="Email" class="form-control" id="Email" placeholder="Email" />
             <span asp-validation-for="Email"></span>
@@ -22,7 +22,7 @@
     </div>
 
     <div class="form-group">
-        <label asp-for="Password" class="col-sm-2 control-label"></label>
+        <label asp-for="Password" class="col-sm-2 control-label col-sm-offset-2"></label>
         <div class="col-sm-5">
             <input asp-for="Password" class="form-control" id="Password" placeholder="Password" />
             <span asp-validation-for="Password"></span>
@@ -30,7 +30,7 @@
     </div>
 
     <div class="form-group">
-        <label asp-for="ConfirmPassword" class="col-sm-2 control-label"></label>
+        <label asp-for="ConfirmPassword" class="col-sm-2 control-label col-sm-offset-2"></label>
         <div class="col-sm-5">
             <input asp-for="ConfirmPassword" class="form-control" id="ConfirmPassword" placeholder="Confirm Password" />
             <span asp-validation-for="ConfirmPassword"></span>
@@ -38,14 +38,14 @@
     </div>
 
     <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-5">
+        <div class="col-sm-offset-4 col-sm-5">
             <button type="submit" class="btn btn-default">Register</button>
         </div>
     </div>
 
         <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-5">
-                Provider, Register here: <a asp-controller="Account" asp-action="RegisterProvider"> Register</a>
+            <div class="col-sm-offset-4 col-sm-5">
+                PROVIDER, Register Here: <a asp-controller="Account" asp-action="RegisterProvider"> Register</a>
             </div>
         </div>  
 </form>

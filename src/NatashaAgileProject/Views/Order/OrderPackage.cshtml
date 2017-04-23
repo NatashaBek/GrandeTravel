@@ -1,5 +1,5 @@
 ﻿@model AddOrderViewModel
-<h1 class="page-header">Order Package</h1>
+<h1 class="text-center page-header">Order Package</h1>
 
 <form class="form-horizontal" asp-controller="Order" asp-action="OrderPackage" method="post" role="form" asp-anti-forgery="true">
     <div asp-validation-summary="ModelOnly"></div>
@@ -9,7 +9,7 @@
     </div>
 
     <div class="form-group">
-        <label asp-for="PackageId" class="col-sm-2 control-label"></label>
+        <label asp-for="PackageId" class="col-sm-2 control-label col-sm-offset-2"></label>
         <div class="col-sm-5">
             <input readonly="readonly" asp-for="PackageId" class="form-control" id="PackageId" />
             <span asp-validation-for="PackageId"></span>
@@ -17,7 +17,7 @@
     </div>
        
     <div class="form-group">
-        <label asp-for="PackageName" class="col-sm-2 control-label"></label>
+        <label asp-for="PackageName" class="col-sm-2 control-label col-sm-offset-2"></label>
         <div class="col-sm-5">
             <input readonly="readonly" asp-for="@Model.Packages.PackageName" class="form-control" id="PackageName" placeholder="PackageName" />
             <span asp-validation-for="PackageName"></span>
@@ -25,7 +25,7 @@
     </div>
 
         <div class="form-group">
-            <label asp-for="Date" class="col-sm-2 control-label"></label>
+            <label asp-for="Date" class="col-sm-2 control-label col-sm-offset-2"></label>
             <div class="col-sm-5">
                 <input readonly="readonly" asp-for="@Model.Date" class="form-control" id="Date" />
                 <span asp-validation-for="Date"></span>
@@ -33,7 +33,7 @@
         </div>
 
         <div class="form-group">
-            <label asp-for="UserName" class="col-sm-2 control-label"></label>
+            <label asp-for="UserName" class="col-sm-2 control-label col-sm-offset-2"></label>
             <div class="col-sm-5">
                 <input readonly="readonly" asp-for="@User.Identity.Name" class="form-control" id="UserName" />
                 <span asp-validation-for="UserName"></span>
@@ -41,7 +41,7 @@
         </div>
 
         <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-5">
+            <div class="col-sm-offset-4 col-sm-5">
                 <button type="submit" class="btn btn-default">Order</button>
             </div>
         </div>

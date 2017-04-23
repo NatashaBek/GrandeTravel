@@ -17,7 +17,7 @@ namespace NatashaAgileProject.Services
 
         protected override void OnConfiguring(DbContextOptionsBuilder option)
         {
-            option.UseSqlServer(@"Server=(localdb)\mssqllocaldb; Database=NBProjectDB; Trusted_Connection=True;");
+            option.UseSqlServer(@"Server=(localdb)\mssqllocaldb; Database=NBGrandeTravelDB; Trusted_Connection=True;");
         }
     }
 }

@@ -7,71 +7,73 @@
         <br />
         <button class="btn btn-default btn-block" ng-click="getsearchData()">Filter Search</button>
         <br />
-    
         <div class="row">
             <div ng-show="showPackages">
-                <h3>All Packages</h3>
-                <table class="table table-responsive table-hover">
-                    <thead>
-                        <tr>
-                            <td>PackageId</td>
-                            <td>PackageName</td>
-                            <td>Location</td>
-                            <td>Details</td>
-                            <td>Price</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr ng-repeat="x in allResults">
-                            <td>{{x.packageId}}</td>
-                            <td>{{x.packageName}}</td>
-                            <td>{{x.location}}</td>
-                            <td>{{x.details}}</td>
-                            <td>{{x.price}}</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <h3 class="text-center">All Packages</h3>
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <td>PackageId</td>
+                                <td>PackageName</td>
+                                <td>Location</td>
+                                <td>Details</td>
+                                <td>Price</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="x in allResults">
+                                <td>{{x.packageId}}</td>
+                                <td>{{x.packageName}}</td>
+                                <td>{{x.location}}</td>
+                                <td>{{x.details}}</td>
+                                <td>{{x.price}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-
+            <br />
             <div ng-show="searchPackages">
                 <div class="row">
-                    <div class="col-sm-5">
+                    <div class="col-sm-5 col-sm-offset-1">
                         <div class="input-group">
                             <input type="text" ng-model="location" class="form-control" placeholder="Search by location">
                             <span class="input-group-btn">
                                 <button class="btn btn-default" ng-click="searchByLocation()" type="submit"><span class="glyphicon glyphicon-search"></span></button>
                             </span>
                         </div>
+                        <br />
                     </div>
                     <div class="col-sm-5">
                         <input class="form-control" type="text" ng-model="criteria" placeholder="Filter Search">
                     </div>
                 </div>
-
-                <table class="table table-responsive table-hover">
-                    <thead>
-                        <tr>
-                            <td>PackageId</td>
-                            <td>PackageName</td>
-                            <td>Location</td>
-                            <td>Details</td>
-                            <td>Price</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr ng-repeat="x in pac | filter: criteria ">
-                            <td>{{x.packageId}}</td>
-                            <td>{{x.packageName}}</td>
-                            <td>{{x.location}}</td>
-                            <td>{{x.details}}</td>
-                            <td>{{x.price}}</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <br />
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered table-hover text-center">
+                        <thead>
+                            <tr>
+                                <td>PackageId</td>
+                                <td>PackageName</td>
+                                <td>Location</td>
+                                <td>Details</td>
+                                <td>Price</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="x in pac | filter: criteria ">
+                                <td>{{x.packageId}}</td>
+                                <td>{{x.packageName}}</td>
+                                <td>{{x.location}}</td>
+                                <td>{{x.details}}</td>
+                                <td>{{x.price}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </div>
-    </div>
-
+        </div>        
     <script>
         var app = angular.module("AngApp", []);
 
@@ -99,5 +101,7 @@
             }
         });
     </script>
+    </div>
 </div>
+
 

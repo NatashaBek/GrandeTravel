@@ -7,21 +7,50 @@
     <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
 </head>
 <body>
+    @* Nav & Footer Styling *@
     <style>
     .navbar-brand > img{
         margin-top:-20px;
         height:61px;
         width:auto;
     }
-    .welcome{margin-top:15px;}
+    .navbar-default {
+    background-color: #848484;
+    border-color: #acacac;}
 
-    #logout{margin-top:10px;}
-    
-    .footer{
-        align-content:center;
-        background-color:lightgrey;
-        width:auto;
-    }
+    .navbar-default .navbar-brand {
+    color: #ffffff;}
+
+    .navbar-default .navbar-brand:hover,
+    .navbar-default .navbar-brand:focus {
+    color: #60d4f1;}
+
+    .navbar-default .navbar-text {
+    color: #ffffff;}
+
+    .navbar-default .navbar-nav > li > a {
+    color: #ffffff;}
+
+    .navbar-default .navbar-nav > li > a:hover,
+    .navbar-default .navbar-nav > li > a:focus {
+    color: #60d4f1;}
+   
+    .welcome{margin-top:15px;
+             margin-left:15px;
+             color:white;}
+
+    #logout{margin-top:10px;
+            margin-right:7px;
+            margin-left:10px;}
+
+    .footer {align-content: center;
+            background-color: #848484;
+            width: auto;}
+
+        #backto {margin-right:7px;
+                color: #60d4f1;}
+
+        a {color: #60d4f1}
     </style>
     <script src="~/lib/jquery/dist/jquery.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
@@ -64,7 +93,7 @@
                             <li><a asp-controller="Package" asp-action="Angular">Filter Search</a></li>
 
                             @if (User.IsInRole("Provider"))
-                            {
+                           {
                                 <li><a asp-controller="Package" asp-action="Manage">Manage</a></li>
                             }
                         </ul>
@@ -103,28 +132,28 @@
             @RenderBody()
         </div>
         <br /> 
-           @* Footer *@
+        @* Footer *@
         <footer class="footer">
             <div class="container"> 
                 <div class="row text-center">
                     <div class="col-sm-2"></div>
                     <div class="col-sm-4">
-                        <strong>About Grande Travel</strong>
-                        <p>Syd CBD</p>
-                        <p>324 Pitt St</p>
-                        <p>2219</p>
+                        <p><strong>About Grande Travel</strong></p>
+                        <p>Location: Syd CBD,324 Pitt St</p>
+                        <p>Post: 2219</p>
                     </div>
 
                     <div class="col-sm-4">
-                        <strong>Contact Details</strong>
-                        <p>Email:GrandeT@hotmail.com</p>
-                        <p>Phone:95886432</p>
+                        <p><strong>Contact Details</strong></p>
+                        <p>Email: GrandeT@hotmail.com</p>
+                        <p>Phone: 95886432</p>
                     </div>
                 </div> 
-                <div class="col-sm-4"></div>
-                    <div class="row text-center">
+                <br />
+                <div class="col-sm-4"></div>               
+                    <div class="row text-center">                      
                         <div class="col-sm-4">&copy; Natasha Bekvalac 2016. All Rights Reserved.</div>
-                        <p class="pull-right"><a href="#">Back to top</a></p>
+                        <p class="pull-right"><a id="backto" href="#">Back to top</a></p>
                     </div>
                 </div>
         </footer>
